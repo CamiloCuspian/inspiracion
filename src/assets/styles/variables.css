@@ -1,0 +1,37 @@
+:root {
+  /* Paleta de colores principal */
+  --color-pink-primary: #F8BBD0;     /* Rosa suave principal */
+  --color-pink-dark: #E091A9;        /* Rosa oscuro para acentos */
+  --color-pink-light: #FDE8EF;       /* Rosa muy claro, casi blanco */
+  
+  /* Blancos */
+  --color-white-pure: #FFFFFF;       /* Blanco puro */
+  --color-white-off: #FAF8F9;        /* Blanco hueso */
+  
+  /* Grises */
+  --color-gray-light: #E6E6E6;       /* Gris claro */
+  --color-gray-medium: #A0A0A0;      /* Gris medio */
+  --color-gray-dark: #5A5A5A;        /* Gris oscuro */
+  
+  /* Acentos */
+  --color-gold: #E2B882;             /* Dorado para detalles de lujo */
+  
+  /* Tipografía */
+  --font-primary: 'Playfair Display', serif;    /* Elegante para títulos */
+  --font-secondary: 'Montserrat', sans-serif;   /* Moderna para texto */
+
+  /* Bordes y sombras */
+  --border-radius: 4px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+  /* Variables adicionales para la tienda */
+  --text-primary: var(--color-gray-dark);
+  --text-secondary: var(--color-gray-medium);
+  --color-primary: var(--color-pink-dark);
+  --bg-primary: var(--color-white-off);
+  --bg-secondary: var(--color-pink-light);
+  --bg-accent: var(--color-gold);
+  --text-black: #000000;
+  --radius-cards: 8px;
+  --bg-grey: var(--color-gray-light);
+}
