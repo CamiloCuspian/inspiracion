@@ -5,49 +5,97 @@ export const useProductsStore = defineStore('products', {
     products: [
       {
         id: 1,
-        name: 'Élégance Nocturne',
+        name: 'Coconut Passión',
         description: 'Una fragancia sofisticada con notas de jazmín, vainilla y sándalo que evoca elegancia y misterio.',
         price: {
-          baja: 75000,
-          normal: 89000,
-          alta: 115000
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
         },
-        image: '/images/perfumes-mujer/perfume1.avif',
+        image: '/images/perfumes-mujer/coconut-pasion.avif',
         category: 'mujer',
-        topNotes: 'Jazmín, Bergamota',
-        middleNotes: 'Rosa, Ylang-ylang',
-        baseNotes: 'Vainilla, Sándalo, Ámbar'
+        topNotes: 'Avanillado, Coco',
+        middleNotes: 'Dulce, Lactónico',
+        baseNotes: 'Atalcado, Tropical'
       },
       {
         id: 2,
-        name: 'Rose Éternelle',
+        name: 'Aqua Di Gio',
         description: 'Una delicada combinación de pétalos de rosa, frutos rojos y almizcle para una mujer romántica y soñadora.',
         price: {
-          baja: 65000,
-          normal: 78000,
-          alta: 98000
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
         },
-        image: '/images/perfumes-mujer/perfume2.avif',
+        image: '/images/perfumes-mujer/aqua-di-gio.avif',
         category: 'mujer',
-        topNotes: 'Frutos rojos, Bergamota',
-        middleNotes: 'Rosa, Peonía',
-        baseNotes: 'Almizcle, Sándalo'
+        topNotes: 'Florales, Fresco, Floral Blanco',
+        middleNotes: 'Verde, Vodka, Rosas',
+        baseNotes: 'Afrutados, Dulce, Atalcado, Amaderado'
       },
       {
         id: 3,
-        name: 'Séduction Florale',
+        name: 'Bombshell',
         description: 'Un bouquet floral con toques cítricos y amaderados que deja una estela encantadora y seductora.',
         price: {
-          baja: 82000,
-          normal: 95000,
-          alta: 125000
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
         },
-        image: '/images/perfumes-mujer/perfume3.avif',
+        image: '/images/perfumes-mujer/bombshell.avif',
         category: 'mujer',
-        topNotes: 'Mandarina, Neroli',
-        middleNotes: 'Gardenia, Jazmín',
-        baseNotes: 'Pachulí, Cedro'
+        topNotes: 'Fresco, Florales, Cítrico',
+        middleNotes: 'Dulce, Tropical, Afrutados',
+        baseNotes: 'Amaderado, Aromático, Rosas'
       },
+      {
+        id: 4,
+        name: 'Can Can',
+        description: 'Un bouquet floral con toques cítricos y amaderados que deja una estela encantadora y seductora.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/can-can-paris.avif',
+        category: 'mujer',
+        topNotes: 'Afrutados, Dulce, Ámbar',
+        middleNotes: 'Atalcado, Cítrico, Florales',
+        baseNotes: 'Amaderado, Animálico'
+      },
+      {
+        id: 5,
+        name: 'Cloud',
+        description: 'Un bouquet floral con toques cítricos y amaderados que deja una estela encantadora y seductora.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/cloud-arian.avif',
+        category: 'mujer',
+        topNotes: 'Dulce',
+        middleNotes: 'Latónico',
+        baseNotes: 'Avainillado, Coco'
+      },
+      {
+        id: 6,
+        name: 'Ch',
+        description: 'Un bouquet floral con toques cítricos y amaderados que deja una estela encantadora y seductora.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/ch-carolina.avif',
+        category: 'mujer',
+        topNotes: 'Cítrico, Amaderado, Dulce',
+        middleNotes: 'Floral Blanco, Cuero',
+        baseNotes: 'Animálico, pachulí'
+      },
+
+
+      // Categoria hombre
       {
         id: 4,
         name: 'Aventure Bleu',

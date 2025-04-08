@@ -34,7 +34,7 @@ const { getWomenProducts: womenProducts } = storeToRefs(productsStore)
 
 <style scoped>
 .category-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/hero-bg.avif');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mujer-bg.avif');
   background-size: cover;
   background-position: center;
   color: white;

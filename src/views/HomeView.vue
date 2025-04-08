@@ -144,13 +144,13 @@ const featuredProducts = computed(() => {
 }
 
 .category-card.women {
-  background: url("/images/hero-bg.avif");
+  background: url("/images/categori-woman.avif");
   background-size: cover;
   background-position: center;
 }
 
 .category-card.men {
-  background: url("/images/category-men.jpg");
+  background: url("/images/category-men.avif");
   background-size: cover;
   background-position: center;
 }
