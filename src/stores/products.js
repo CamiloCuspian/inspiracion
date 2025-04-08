@@ -12,7 +12,7 @@ export const useProductsStore = defineStore('products', {
           normal: 89000,
           alta: 115000
         },
-        image: '/public/images/perfumes-mujer/perfume1.avif',
+        image: '/images/perfumes-mujer/perfume1.avif',
         category: 'mujer',
         topNotes: 'Jazmín, Bergamota',
         middleNotes: 'Rosa, Ylang-ylang',
@@ -27,7 +27,7 @@ export const useProductsStore = defineStore('products', {
           normal: 78000,
           alta: 98000
         },
-        image: '/public/images/perfumes-mujer/perfume2.avif',
+        image: '/images/perfumes-mujer/perfume2.avif',
         category: 'mujer',
         topNotes: 'Frutos rojos, Bergamota',
         middleNotes: 'Rosa, Peonía',
@@ -42,7 +42,7 @@ export const useProductsStore = defineStore('products', {
           normal: 95000,
           alta: 125000
         },
-        image: '/public/images/perfumes-mujer/perfume3.avif',
+        image: '/images/perfumes-mujer/perfume3.avif',
         category: 'mujer',
         topNotes: 'Mandarina, Neroli',
         middleNotes: 'Gardenia, Jazmín',
@@ -57,7 +57,7 @@ export const useProductsStore = defineStore('products', {
           normal: 85000,
           alta: 110000
         },
-        image: '/public/images/perfumes-hombre/perfume1.avif',
+        image: '/images/perfumes-hombre/perfume1.avif',
         category: 'hombre',
         topNotes: 'Limón, Bergamota',
         middleNotes: 'Notas acuáticas, Lavanda',
@@ -72,7 +72,7 @@ export const useProductsStore = defineStore('products', {
           normal: 92000,
           alta: 120000
         },
-        image: '/public/images/perfumes-hombre/perfume2.avif',
+        image: '/images/perfumes-hombre/perfume2.avif',
         category: 'hombre',
         topNotes: 'Pimienta negra, Nuez moscada',
         middleNotes: 'Cedro, Vetiver',
@@ -87,7 +87,7 @@ export const useProductsStore = defineStore('products', {
           normal: 88000,
           alta: 115000
         },
-        image: '/public/images/perfumes-hombre/perfume3.avif',
+        image: '/images/perfumes-hombre/perfume3.avif',
         category: 'hombre',
         topNotes: 'Bergamota, Menta',
         middleNotes: 'Cardamomo, Lavanda',
