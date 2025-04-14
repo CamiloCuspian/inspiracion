@@ -116,11 +116,10 @@ img {
 .container {
   width: min(100%, 1200px);
   margin-inline: auto;
-  padding: 0 1rem;
+  padding: 4em 0;
 }
 
 .wrapper {
-  padding: 4em 0;
 }
 
 .flow > * + * {

@@ -2,12 +2,12 @@
   <ul class="nav-list">
     <li class="nav-item">
       <RouterLink to="/perfumes/hombre" class="nav-link" @click="emitCloseMenu">
-        Perfumes para Hombre
+      Hombre
       </RouterLink>
     </li>
     <li class="nav-item">
       <RouterLink to="/perfumes/mujer" class="nav-link" @click="emitCloseMenu">
-        Perfumes para Mujer
+      Mujer
       </RouterLink>
     </li>
     <li class="nav-item">

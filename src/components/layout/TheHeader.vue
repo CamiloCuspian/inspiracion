@@ -1,6 +1,5 @@
 <template>
   <nav class="header">
-    <div class="container">
       <div class="header-content">
         <RouterLink to="/" class="logo">
           <h1>Inspiración</h1>
@@ -21,7 +20,6 @@
           </RouterLink>
         </div>
       </div>
-    </div>
   </nav>
 </template>
 
@@ -63,7 +61,7 @@ const closeMenu = () => {
   background-color: var(--color-white-pure);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 0.75rem 0;
+  padding: 1.75rem 2rem;
 }
 
 .header-content {
