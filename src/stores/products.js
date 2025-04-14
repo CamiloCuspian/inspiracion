@@ -1,8 +1,23 @@
 import { defineStore } from 'pinia'
 
+// Función para generar slugs desde nombres
+function generateSlug(name) {
+  return name
+    .toLowerCase()
+    .replace(/\s+/g, '-')         // Reemplaza espacios con guiones
+    .replace(/[^\w\-]+/g, '')     // Elimina caracteres especiales
+    .replace(/\-\-+/g, '-')       // Reemplaza múltiples guiones con uno solo
+    .replace(/^-+/, '')           // Elimina guiones al inicio
+    .replace(/-+$/, '')           // Elimina guiones al final
+    .normalize('NFD')             // Normaliza caracteres acentuados
+    .replace(/[\u0300-\u036f]/g, ''); // Elimina diacríticos
+}
+
 export const useProductsStore = defineStore('products', {
-  state: () => ({
-    products: [
+  state: () => {
+    // Primero definimos los productos
+    const products = [
+      // Perfumes de mujer
       {
         id: 1,
         name: 'Coconut Passión',
@@ -94,10 +109,9 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Animálico, pachulí'
       },
 
-
-      // Categoria hombre
+      // Perfumes de hombre
       {
-        id: 4,
+        id: 7,
         name: 'Aventure Bleu',
         description: 'Una fragancia fresca y vibrante con notas acuáticas y cítricas ideal para el hombre aventurero.',
         price: {
@@ -112,7 +126,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Cedro, Ámbar gris'
       },
       {
-        id: 5,
+        id: 8,
         name: 'Bois Noir',
         description: 'Intenso y misterioso con notas de especias, madera y cuero para un hombre con carácter.',
         price: {
@@ -127,7 +141,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Cuero, Ámbar'
       },
       {
-        id: 6,
+        id: 9,
         name: 'L\'Homme Idéal',
         description: 'Elegante y versátil con notas frescas y amaderadas para un hombre moderno y sofisticado.',
         price: {
@@ -140,9 +154,122 @@ export const useProductsStore = defineStore('products', {
         topNotes: 'Bergamota, Menta',
         middleNotes: 'Cardamomo, Lavanda',
         baseNotes: 'Sándalo, Haba Tonka'
+      },
+
+      // Perfumes árabes
+      {
+        id: 10,
+        name: 'Oud Royal',
+        description: 'Una exquisita fragancia árabe con auténtico oud, un ingrediente legendario conocido como "oro líquido". Notas profundas de madera, especias exóticas y sutiles toques florales.',
+        price: {
+          baja: 95000,
+          normal: 130000,
+          alta: 175000
+        },
+        image: '/images/perfumes-arabes/oud-royal.avif',
+        category: 'arabe',
+        topNotes: 'Azafrán, Incienso, Pimienta rosa',
+        middleNotes: 'Oud, Cedro, Rosa de Damasco',
+        baseNotes: 'Ámbar, Pachulí, Vainilla'
+      },
+      {
+        id: 11,
+        name: 'Amber Sultán',
+        description: 'Una fragancia cálida y envolvente, inspirada en los palacios de Oriente Medio. Cautivadora combinación de ámbar dorado, sándalo y mirra que evoca el lujo de las noches del desierto.',
+        price: {
+          baja: 85000,
+          normal: 120000,
+          alta: 160000
+        },
+        image: '/images/perfumes-arabes/amber-sultan.avif',
+        category: 'arabe',
+        topNotes: 'Bergamota, Mirra, Cardamomo',
+        middleNotes: 'Ámbar, Rosa, Jazmín',
+        baseNotes: 'Sándalo, Vainilla, Almizcle'
+      },
+      {
+        id: 12,
+        name: 'Desert Mirage',
+        description: 'Una interpretación moderna de la perfumería árabe tradicional. Combina notas frescas de cítricos con corazón de especias exóticas y una base intensa de maderas preciosas.',
+        price: {
+          baja: 80000,
+          normal: 115000,
+          alta: 155000
+        },
+        image: '/images/perfumes-arabes/desert-mirage.avif',
+        category: 'arabe',
+        topNotes: 'Limón, Canela, Nuez moscada',
+        middleNotes: 'Oud, Incienso, Jazmín',
+        baseNotes: 'Almizcle, Vainilla, Cuero'
+      },
+      {
+        id: 13,
+        name: 'Mystic Night',
+        description: 'Una seductora experiencia olfativa que evoca las misteriosas noches de Arabia. Combina esencias exóticas con un fondo amaderado y ambarino que perdura en la piel.',
+        price: {
+          baja: 90000,
+          normal: 125000,
+          alta: 165000
+        },
+        image: '/images/perfumes-arabes/mystic-night.avif',
+        category: 'arabe',
+        topNotes: 'Cardamomo, Comino, Bergamota',
+        middleNotes: 'Rosa, Oud, Pachulí',
+        baseNotes: 'Ámbar, Almizcle, Cuero'
+      },
+
+      // Bolsos de mano
+      {
+        id: 14,
+        name: 'Bolso Lila',
+        description: 'Hermoso bloso para combinar tus mejores outits.',
+        price: 50000,
+        image: '/images/bolsos/bolso-lila.avif',
+        category: 'bolso',
+        color: 'Lyla',
+        material: 'Sintético',
+      },
+      {
+        id: 15,
+        name: 'Bolso Negro',
+        description: 'Bolso tote espacioso y versátil para el día a día. Combina estilo y funcionalidad con múltiples bolsillos interiores y un diseño atemporal.',
+        price: 50000,
+        image: '/images/bolsos/bolso-negro.avif',
+        category: 'bolso',
+        color: 'Negro',
+        material: 'Cuero sintético de alta calidad',
+      },
+      {
+        id: 16,
+        name: 'Crossbody Chic',
+        description: 'Bolso crossbody compacto y elegante con cadena ajustable. Perfecto para llevar lo esencial con estilo cuando necesitas libertad de movimiento.',
+        price: 95000,
+        image: '/images/bolsos/crossbody-chic.avif',
+        category: 'bolso',
+        color: 'Rojo',
+        material: 'Cuero sintético',
+        dimensions: '20cm x 15cm x 7cm'
+      },
+      {
+        id: 17,
+        name: 'Backpack Modern',
+        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        price: 135000,
+        image: '/images/bolsos/backpack-modern.avif',
+        category: 'bolso',
+        color: 'Azul marino',
+        material: 'Nylon y cuero',
+        dimensions: '30cm x 40cm x 15cm'
       }
-    ]
-  }),
+    ];
+    
+    // Añadimos los slugs a cada producto
+    products.forEach(product => {
+      product.slug = generateSlug(product.name);
+    });
+    
+    return { products };
+  },
   getters: {
     getMenProducts: (state) => {
       return state.products.filter(product => product.category === 'hombre')
@@ -150,8 +277,17 @@ export const useProductsStore = defineStore('products', {
     getWomenProducts: (state) => {
       return state.products.filter(product => product.category === 'mujer')
     },
+    getArabicProducts: (state) => {
+      return state.products.filter(product => product.category === 'arabe')
+    },
+    getHandbags: (state) => {
+      return state.products.filter(product => product.category === 'bolso')
+    },
     getProductById: (state) => (id) => {
       return state.products.find(product => product.id === parseInt(id))
+    },
+    getProductBySlug: (state) => (slug) => {
+      return state.products.find(product => product.slug === slug)
     }
   }
 })

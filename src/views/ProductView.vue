@@ -1,9 +1,10 @@
 <template>
   <div class="product-view">
     <div class="container">
+      
       <div class="breadcrumbs">
         <RouterLink to="/">Inicio</RouterLink> &gt;
-        <RouterLink :to="categoryRoute">{{ categoryLabel }}</RouterLink> &gt;
+        <RouterLink v-if="product" :to="categoryRoute">{{ categoryLabel }}</RouterLink> &gt;
         <span>{{ product?.name || 'Cargando...' }}</span>
       </div>
       
@@ -18,7 +19,7 @@
       </div>
       
       <!-- Related Products -->
-      <div v-if="relatedProducts.length > 0" class="related-products section">
+      <div v-if="product && relatedProducts.length > 0" class="related-products section">
         <h2 class="section-title">También te puede interesar</h2>
         <ProductGrid :products="relatedProducts" />
       </div>
@@ -27,7 +28,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import { useProductsStore } from '@/stores/products'
 import ProductDetail from '@/components/product/ProductDetail.vue'
@@ -35,19 +36,49 @@ import ProductGrid from '@/components/product/ProductGrid.vue'
 
 const route = useRoute()
 const productsStore = useProductsStore()
+const isDevelopment = process.env.NODE_ENV === 'development' || true  // Para depuración
+
+onMounted(() => {
+  console.log('ProductView montado con slug:', route.params.slug);
+  if (product.value) {
+    console.log('Producto encontrado:', product.value.name);
+  } else {
+    console.log('Producto NO encontrado');
+    console.log('Todos los slugs disponibles:', productsStore.products.map(p => p.slug));
+  }
+});
 
 const product = computed(() => {
-  return productsStore.getProductById(route.params.id)
+  const foundProduct = productsStore.getProductBySlug(route.params.slug);
+  
+  // Si no encontramos el producto por slug, intentamos buscarlo por ID (para compatibilidad)
+  if (!foundProduct && !isNaN(route.params.slug)) {
+    return productsStore.getProductById(route.params.slug);
+  }
+  
+  return foundProduct;
 })
 
 const categoryRoute = computed(() => {
   if (!product.value) return '/'
-  return product.value.category === 'hombre' ? '/perfumes/hombre' : '/perfumes/mujer'
+  
+  const category = product.value.category
+  if (category === 'hombre') return '/perfumes/hombre'
+  if (category === 'mujer') return '/perfumes/mujer'
+  if (category === 'arabe') return '/perfumes/arabes'
+  
+  return '/'
 })
 
 const categoryLabel = computed(() => {
   if (!product.value) return ''
-  return product.value.category === 'hombre' ? 'Perfumes para Hombre' : 'Perfumes para Mujer'
+  
+  const category = product.value.category
+  if (category === 'hombre') return 'Perfumes para Hombre'
+  if (category === 'mujer') return 'Perfumes para Mujer'
+  if (category === 'arabe') return 'Perfumes Árabes'
+  
+  return ''
 })
 
 // Get 2 related products of same category
@@ -68,6 +99,14 @@ const relatedProducts = computed(() => {
 <style scoped>
 .product-view {
   padding: 2rem 0 4rem;
+}
+
+.debug-info {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
 }
 
 .breadcrumbs {

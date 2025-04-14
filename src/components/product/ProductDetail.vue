@@ -6,9 +6,7 @@
 
     <div class="product-info">
       <h1 class="product-title">{{ product.name }}</h1>
-      <p class="product-price">
-        {{ formattedPrice }}
-      </p>
+      <p class="product-price">{{ formattedPrice }}</p>
       
       <div class="product-description">
         <p>{{ product.description }}</p>
@@ -64,7 +62,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useCartStore } from '@/stores/cart'
 
 const props = defineProps({
@@ -74,69 +72,100 @@ const props = defineProps({
   }
 })
 
+// Depuración
+onMounted(() => {
+  console.log('ProductDetail montado con producto:', props.product);
+  console.log('Precio del producto:', props.product.price);
+});
+
 const cartStore = useCartStore()
 const quantity = ref(1)
 const concentration = ref('normal')
 
-const concentrationOptions = [
-  { 
-    value: 'baja', 
-    label: 'Baja', 
-    priceModifier: props.product ? new Intl.NumberFormat('es-CO', {
-      style: 'currency',
-      currency: 'COP',
-      minimumFractionDigits: 0
-    }).format(props.product.price.baja) : '' 
-  },
-  { 
-    value: 'normal', 
-    label: 'Normal', 
-    priceModifier: props.product ? new Intl.NumberFormat('es-CO', {
-      style: 'currency',
-      currency: 'COP',
-      minimumFractionDigits: 0
-    }).format(props.product.price.normal) : '' 
-  },
-  { 
-    value: 'alta', 
-    label: 'Alta', 
-    priceModifier: props.product ? new Intl.NumberFormat('es-CO', {
-      style: 'currency',
-      currency: 'COP',
-      minimumFractionDigits: 0
-    }).format(props.product.price.alta) : '' 
+// Verificar si el producto tiene precios por concentración
+const hasConcentrations = computed(() => {
+  return props.product.price && typeof props.product.price === 'object';
+});
+
+// Calcular las opciones de concentración dinámicamente
+const concentrationOptions = computed(() => {
+  if (!hasConcentrations.value) {
+    return [];
   }
-]
+  
+  return [
+    { 
+      value: 'baja', 
+      label: 'Baja', 
+      priceModifier: new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0
+      }).format(props.product.price.baja) 
+    },
+    { 
+      value: 'normal', 
+      label: 'Normal', 
+      priceModifier: new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0
+      }).format(props.product.price.normal)
+    },
+    { 
+      value: 'alta', 
+      label: 'Alta', 
+      priceModifier: new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0
+      }).format(props.product.price.alta)
+    }
+  ];
+});
 
 const formattedPrice = computed(() => {
-  return new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    minimumFractionDigits: 0
-  }).format(props.product.price[concentration.value])
-})
+  if (hasConcentrations.value) {
+    return new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0
+    }).format(props.product.price[concentration.value]);
+  } else {
+    // Para productos como bolsos que no tienen concentraciones
+    return new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0
+    }).format(props.product.price);
+  }
+});
 
 const incrementQuantity = () => {
-  quantity.value++
+  quantity.value++;
 }
 
 const decrementQuantity = () => {
   if (quantity.value > 1) {
-    quantity.value--
+    quantity.value--;
   }
 }
 
 const addToCart = () => {
   for (let i = 0; i < quantity.value; i++) {
-    cartStore.addToCart(props.product.id, concentration.value)
+    if (hasConcentrations.value) {
+      cartStore.addToCart(props.product.id, concentration.value);
+    } else {
+      // Para productos como bolsos
+      cartStore.addHandbagToCart(props.product.id);
+    }
   }
   
   // Reset values after adding to cart
   quantity.value = 1
-  concentration.value = 'normal'
   
   // Show some feedback
-  alert('Producto añadido al carrito')
+  alert('Producto añadido al carrito');
 }
 </script>
 
@@ -169,34 +198,6 @@ const addToCart = () => {
   font-weight: 700;
   color: var(--color-pink-dark);
   margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.price-change {
-  font-size: 0.9rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-}
-
-.price-change.alta {
-  background-color: var(--color-pink-dark);
-  color: white;
-}
-
-.price-change.baja {
-  background-color: var(--color-gray-light);
-  color: var(--color-gray-dark);
-}
-
-/* Animación para el cambio de precio */
-.price-change-enter-active, .price-change-leave-active {
-  transition: all 0.3s;
-}
-.price-change-enter-from, .price-change-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
 }
 
 .product-description {

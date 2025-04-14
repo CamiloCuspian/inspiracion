@@ -1,98 +1,117 @@
 <template>
-    <!-- Hero Section -->
-    <header class="hero">
-      <picture class="hero-background">
-        <!-- Imágenes de diferentes tamaños para dispositivos distintos -->
-        <source
-          media="(max-width: 640px)"
-          srcset="/images/hero-bg-mobile.avif"
-          type="image/avif"
-        />
-        <source
-          media="(max-width: 1024px)"
-          srcset="/images/hero-bg-tablet.avif"
-          type="image/avif"
-        />
-        <source srcset="/images/hero-bg.avif" type="image/avif" />
-        <!-- Imagen de respaldo por si AVIF no es soportado -->
-        <img
-          src="/images/hero-bg.avif"
-          alt="Fondo de perfumes"
-          class="hero-img"
-        />
-      </picture>
-      <div class="container">
-        <div class="hero-content">
-          <h1>Descubre tu fragancia ideal</h1>
-          <p>Aromas que cuentan historias y despiertan emociones</p>
-          <div class="hero-buttons">
-            <RouterLink to="/perfumes/mujer" class="btn"
-              >Perfumes para Ella</RouterLink
+  <!-- Hero Section -->
+  <header class="hero">
+    <picture class="hero-background">
+      <!-- Imágenes de diferentes tamaños para dispositivos distintos -->
+      <source
+        media="(max-width: 640px)"
+        srcset="/images/hero-bg-mobile.avif"
+        type="image/avif"
+      />
+      <source
+        media="(max-width: 1024px)"
+        srcset="/images/hero-bg-tablet.avif"
+        type="image/avif"
+      />
+      <source srcset="/images/hero-bg.avif" type="image/avif" />
+      <!-- Imagen de respaldo por si AVIF no es soportado -->
+      <img
+        src="/images/hero-bg.avif"
+        alt="Fondo de perfumes"
+        class="hero-img"
+      />
+    </picture>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Descubre tu fragancia ideal</h1>
+        <p>Aromas que cuentan historias y despiertan emociones</p>
+        <div class="hero-buttons">
+          <RouterLink to="/perfumes/mujer" class="btn"
+            >Perfumes para Ella</RouterLink
+          >
+          <RouterLink to="/perfumes/hombre" class="btn"
+            >Perfumes para Él</RouterLink
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Featured Products Section -->
+  <section class="featured section">
+    <div class="container">
+      <h2 class="section-title">Nuestras Fragancias Destacadas</h2>
+      <ProductGrid :products="featuredProducts" />
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories section">
+    <div class="container">
+      <h2 class="section-title">Explora nuestras colecciones</h2>
+      <div class="categories-grid">
+        <div class="category-card women">
+          <div class="category-content">
+            <h3>Perfumes para Mujer</h3>
+            <p>Elegancia y feminidad en cada gota</p>
+            <RouterLink to="/perfumes/mujer" class="btn-outline"
+              >Descubrir</RouterLink
             >
-            <RouterLink to="/perfumes/hombre" class="btn"
-              >Perfumes para Él</RouterLink
+          </div>
+        </div>
+        <div class="category-card men">
+          <div class="category-content">
+            <h3>Perfumes para Hombre</h3>
+            <p>Carácter y distinción en cada fragancia</p>
+            <RouterLink to="/perfumes/hombre" class="btn-outline"
+              >Descubrir</RouterLink
+            >
+          </div>
+        </div>
+        <div class="category-card arabic">
+          <div class="category-content">
+            <h3>Perfumes Árabes</h3>
+            <p>Fragancias exóticas y duraderas de Oriente Medio</p>
+            <RouterLink to="/perfumes/arabes" class="btn-outline"
+              >Descubrir</RouterLink
+            >
+          </div>
+        </div>
+        <div class="category-card handbags">
+          <div class="category-content">
+            <h3>Bolsos de Mano</h3>
+            <p>Complementos elegantes para cada ocasión</p>
+            <RouterLink to="/bolsos" class="btn-outline"
+              >Descubrir</RouterLink
             >
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- Featured Products Section -->
-    <section class="featured section">
-      <div class="container">
-        <h2 class="section-title">Nuestras Fragancias Destacadas</h2>
-        <ProductGrid :products="featuredProducts" />
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories section">
-      <div class="container">
-        <div class="categories-grid">
-          <div class="category-card women">
-            <div class="category-content">
-              <h3>Perfumes para Mujer</h3>
-              <p>Elegancia y feminidad en cada gota</p>
-              <RouterLink to="/perfumes/mujer" class="btn-outline"
-                >Descubrir</RouterLink
-              >
-            </div>
-          </div>
-          <div class="category-card men">
-            <div class="category-content">
-              <h3>Perfumes para Hombre</h3>
-              <p>Carácter y distinción en cada fragancia</p>
-              <RouterLink to="/perfumes/hombre" class="btn-outline"
-                >Descubrir</RouterLink
-              >
-            </div>
-          </div>
+  <!-- About Section -->
+  <section class="about section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Sobre Inspiración</h2>
+          <p>
+            En Inspiración, creamos fragancias que van más allá de los aromas.
+            Cada perfume cuenta una historia, evoca un recuerdo y despierta
+            emociones.
+          </p>
+          <p>
+            Nuestras creaciones capturan la esencia de momentos especiales,
+            permitiéndote llevar contigo esa inspiración durante todo el día.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="/images/about-image.avif" alt="Sobre Inspiración" />
         </div>
       </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Sobre Inspiración</h2>
-            <p>
-              En Inspiración, creamos fragancias que van más allá de los aromas.
-              Cada perfume cuenta una historia, evoca un recuerdo y despierta
-              emociones.
-            </p>
-            <p>
-              Nuestras creaciones capturan la esencia de momentos especiales,
-              permitiéndote llevar contigo esa inspiración durante todo el día.
-            </p>
-          </div>
-          <div class="about-image">
-            <img src="/images/about-image.avif" alt="Sobre Inspiración" />
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -103,17 +122,18 @@ import ProductGrid from "@/components/product/ProductGrid.vue";
 
 const productsStore = useProductsStore();
 
-// Get 3 random products for featured section
+// Get 4 random products for featured section
 const featuredProducts = computed(() => {
-  const allProducts = productsStore.products;
+  const allProducts = productsStore.products.filter(p => p.category !== 'bolso');
   // Shuffle array
   const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
-  // Get first 3 items
+  // Get first 4 items
   return shuffled.slice(0, 3);
 });
 </script>
 
 <style scoped>
+
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -151,6 +171,18 @@ const featuredProducts = computed(() => {
 
 .category-card.men {
   background: url("/images/category-men.avif");
+  background-size: cover;
+  background-position: center;
+}
+
+.category-card.arabic {
+  background: url("/images/category-arabic.avif");
+  background-size: cover;
+  background-position: center;
+}
+
+.category-card.handbags {
+  background: url("/images/category-handbags.avif");
   background-size: cover;
   background-position: center;
 }

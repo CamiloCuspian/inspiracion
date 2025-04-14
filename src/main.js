@@ -7,10 +7,13 @@ import './assets/styles/header.css'
 import './assets/styles/cards.css'
 
 
-
 const app = createApp(App)
+const pinia = createPinia()
 
-app.use(createPinia())
+// Primero inicializamos pinia para que el store esté disponible para el router
+app.use(pinia)
+
+// Luego inicializamos el router que puede depender del store
 app.use(router)
 
 app.mount('#app')

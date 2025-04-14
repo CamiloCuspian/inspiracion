@@ -1,9 +1,6 @@
 <template>
   <ul class="nav-list">
     <li class="nav-item">
-      <RouterLink to="/" class="nav-link" @click="emitCloseMenu">Inicio</RouterLink>
-    </li>
-    <li class="nav-item">
       <RouterLink to="/perfumes/hombre" class="nav-link" @click="emitCloseMenu">
         Perfumes para Hombre
       </RouterLink>
@@ -11,6 +8,16 @@
     <li class="nav-item">
       <RouterLink to="/perfumes/mujer" class="nav-link" @click="emitCloseMenu">
         Perfumes para Mujer
+      </RouterLink>
+    </li>
+    <li class="nav-item">
+      <RouterLink to="/perfumes/arabes" class="nav-link" @click="emitCloseMenu">
+        Perfumes Árabes
+      </RouterLink>
+    </li>
+    <li class="nav-item">
+      <RouterLink to="/bolsos" class="nav-link" @click="emitCloseMenu">
+        Bolsos de Mano
       </RouterLink>
     </li>
     <li class="nav-item">

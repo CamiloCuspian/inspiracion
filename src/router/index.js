@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useProductsStore } from '@/stores/products'
 
 const routes = [
   {
@@ -11,8 +12,27 @@ const routes = [
     name: 'cart',
     component: () => import('@/views/CartView.vue')
   },
+  // Mantener compatibilidad con URLs antiguas basadas en ID
   {
-    path: '/product/:id',
+    path: '/product/:id(\\d+)', // Asegura que solo coincida con números
+    redirect: to => {
+      // Inicializar el store
+      const productsStore = useProductsStore()
+      // Buscar el producto por ID
+      const product = productsStore.getProductById(to.params.id)
+      
+      if (product) {
+        // Redirigir a la nueva ruta basada en slug
+        return { path: `/perfume/${product.slug}` }
+      } else {
+        // Si no se encuentra el producto, redirigir a la lista de productos
+        return { path: '/' }
+      }
+    }
+  },
+  // Rutas nuevas basadas en slug
+  {
+    path: '/perfume/:slug',
     name: 'product',
     component: () => import('@/views/ProductView.vue'),
     props: true
@@ -26,6 +46,22 @@ const routes = [
     path: '/perfumes/mujer',
     name: 'womenProducts',
     component: () => import('@/views/WomenProductsView.vue')
+  },
+  {
+    path: '/perfumes/arabes',
+    name: 'arabicProducts',
+    component: () => import('@/views/ArabicProductsView.vue')
+  },
+  {
+    path: '/bolsos',
+    name: 'handbags',
+    component: () => import('@/views/HandbagsView.vue')
+  },
+  {
+    path: '/bolso/:slug',
+    name: 'handbagDetail',
+    component: () => import('@/views/HandbagDetailView.vue'),
+    props: true
   }
 ]
 
