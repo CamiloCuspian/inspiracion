@@ -1,25 +1,26 @@
 <template>
   <nav class="header">
-      <div class="header-content">
-        <RouterLink to="/" class="logo">
-          <h1>Inspiración</h1>
-        </RouterLink>
-        
-        <button class="menu-toggle" @click="toggleMenu" v-if="isMobile">
-          <span class="menu-icon"></span>
+    <div class="header-content">
+      <RouterLink to="/" class="logo">
+        <h1>Inspiración</h1>
+      </RouterLink>
+      <button class="menu-toggle" @click="toggleMenu" v-if="isMobile">
+        <span class="menu-icon"></span>
+      </button>
+      <nav class="nav" :class="{ 'nav-open': isMenuOpen }">
+        <!-- Añadir botón de cierre aquí -->
+        <button class="close-menu-btn" @click="closeMenu" v-if="isMobile">
+          <span class="close-icon">×</span>
         </button>
-        
-        <nav class="nav" :class="{ 'nav-open': isMenuOpen }">
-          <TheNavigation @closeMenu="closeMenu" />
-        </nav>
-        
-        <div class="cart-icon">
-          <RouterLink to="/cart" class="cart-link">
-            <span class="material-icons">shopping_bag</span>
-            <span v-if="cartItems > 0" class="cart-count">{{ cartItems }}</span>
-          </RouterLink>
-        </div>
+        <TheNavigation @closeMenu="closeMenu" />
+      </nav>
+      <div class="cart-icon">
+        <RouterLink to="/cart" class="cart-link">
+          <span class="material-icons">shopping_bag</span>
+          <span v-if="cartItems > 0" class="cart-count">{{ cartItems }}</span>
+        </RouterLink>
       </div>
+    </div>
   </nav>
 </template>
 
@@ -147,6 +148,30 @@ const closeMenu = () => {
 
 .menu-icon::after {
   top: 8px;
+}
+
+/* Estilo para el botón de cierre */
+.close-menu-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none; /* Por defecto está oculto */
+}
+
+.close-icon {
+  font-size: 1.8rem;
+  color: var(--color-gray-dark);
+}
+
+/* Solo mostrar el botón de cierre en móvil cuando el menú está abierto */
+@media (max-width: 768px) {
+  .close-menu-btn {
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
