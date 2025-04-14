@@ -38,7 +38,7 @@ const { getArabicProducts: arabicProducts } = storeToRefs(productsStore)
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 5rem 0;
+  padding: 5rem 0; 
   text-align: center;
 }
 
