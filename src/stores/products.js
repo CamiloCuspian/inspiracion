@@ -366,7 +366,7 @@ export const useProductsStore = defineStore('products', {
 
       // Perfumes de hombre
       {
-        id: 7,
+        id: 40,
         name: 'Aventure Bleu',
         description: 'Una fragancia fresca y vibrante con notas acuáticas y cítricas ideal para el hombre aventurero.',
         price: {
@@ -381,7 +381,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Cedro, Ámbar gris'
       },
       {
-        id: 8,
+        id: 41,
         name: 'Bois Noir',
         description: 'Intenso y misterioso con notas de especias, madera y cuero para un hombre con carácter.',
         price: {
@@ -396,7 +396,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Cuero, Ámbar'
       },
       {
-        id: 9,
+        id: 42,
         name: 'L\'Homme Idéal',
         description: 'Elegante y versátil con notas frescas y amaderadas para un hombre moderno y sofisticado.',
         price: {
@@ -413,7 +413,7 @@ export const useProductsStore = defineStore('products', {
 
       // Perfumes árabes
       {
-        id: 10,
+        id: 60,
         name: 'Oud Royal',
         description: 'Una exquisita fragancia árabe con auténtico oud, un ingrediente legendario conocido como "oro líquido". Notas profundas de madera, especias exóticas y sutiles toques florales.',
         price: {
@@ -428,7 +428,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Ámbar, Pachulí, Vainilla'
       },
       {
-        id: 11,
+        id: 61,
         name: 'Amber Sultán',
         description: 'Una fragancia cálida y envolvente, inspirada en los palacios de Oriente Medio. Cautivadora combinación de ámbar dorado, sándalo y mirra que evoca el lujo de las noches del desierto.',
         price: {
@@ -443,7 +443,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Sándalo, Vainilla, Almizcle'
       },
       {
-        id: 12,
+        id: 62,
         name: 'Desert Mirage',
         description: 'Una interpretación moderna de la perfumería árabe tradicional. Combina notas frescas de cítricos con corazón de especias exóticas y una base intensa de maderas preciosas.',
         price: {
@@ -458,7 +458,7 @@ export const useProductsStore = defineStore('products', {
         baseNotes: 'Almizcle, Vainilla, Cuero'
       },
       {
-        id: 13,
+        id: 63,
         name: 'Mystic Night',
         description: 'Una seductora experiencia olfativa que evoca las misteriosas noches de Arabia. Combina esencias exóticas con un fondo amaderado y ambarino que perdura en la piel.',
         price: {
@@ -475,9 +475,9 @@ export const useProductsStore = defineStore('products', {
 
       // Bolsos de mano
       {
-        id: 14,
+        id: 80,
         name: 'Bolso Lila',
-        description: 'Hermoso bloso para combinar tus mejores outits.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 50000,
         image: '/images/bolsos/bolso-lila.avif',
         category: 'bolso',
@@ -485,9 +485,9 @@ export const useProductsStore = defineStore('products', {
         material: 'Sintético',
       },
       {
-        id: 15,
+        id: 81,
         name: 'Bolso Negro',
-        description: 'Bolso tote espacioso y versátil para el día a día. Combina estilo y funcionalidad con múltiples bolsillos interiores y un diseño atemporal.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 50000,
         image: '/images/bolsos/bolso-negro.avif',
         category: 'bolso',
@@ -495,9 +495,9 @@ export const useProductsStore = defineStore('products', {
         material: 'Cuero sintético de alta calidad',
       },
       {
-        id: 16,
+        id: 82,
         name: 'Bolso Rojo',
-        description: 'Bolso crossbody compacto y elegante con cadena ajustable. Perfecto para llevar lo esencial con estilo cuando necesitas libertad de movimiento.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 95000,
         image: '/images/bolsos/bolso-rojo.avif',
         category: 'bolso',
@@ -506,9 +506,9 @@ export const useProductsStore = defineStore('products', {
         dimensions: '20cm x 15cm x 7cm'
       },
       {
-        id: 18,
+        id: 83,
         name: 'Bolso Blanco con gravado elegante',
-        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 135000,
         image: '/images/bolsos/bolso-blanco-gravado.avif',
         category: 'bolso',
@@ -517,9 +517,9 @@ export const useProductsStore = defineStore('products', {
         dimensions: '30cm x 40cm x 15cm'
       },
       {
-        id: 19,
+        id: 84,
         name: 'Bolso Blanco',
-        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 135000,
         image: '/images/bolsos/bolso-blanco.avif',
         category: 'bolso',
@@ -528,9 +528,9 @@ export const useProductsStore = defineStore('products', {
         dimensions: '30cm x 40cm x 15cm'
       },
       {
-        id: 20,
+        id: 85,
         name: 'Bolso Rosa',
-        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 135000,
         image: '/images/bolsos/bolso-rosado.avif',
         category: 'bolso',
@@ -539,9 +539,9 @@ export const useProductsStore = defineStore('products', {
         dimensions: '30cm x 40cm x 15cm'
       },
       {
-        id: 21,
+        id: 86,
         name: 'Bolso Rosado',
-        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 135000,
         image: '/images/bolsos/bolso-rosado.avif',
         category: 'bolso',
@@ -550,9 +550,9 @@ export const useProductsStore = defineStore('products', {
         dimensions: '30cm x 40cm x 15cm'
       },
       {
-        id: 22,
+        id: 67,
         name: 'Bolso Marrón',
-        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 135000,
         image: '/images/bolsos/bolso-marron.avif',
         category: 'bolso',
@@ -561,9 +561,9 @@ export const useProductsStore = defineStore('products', {
         dimensions: '30cm x 40cm x 15cm'
       },
       {
-        id: 23,
+        id: 88,
         name: 'Bolso Rojo',
-        description: 'Mochila moderna con diseño elegante, ideal para la mujer actual. Combina estilo urbano con funcionalidad para el día a día o viajes cortos.',
+        description: ' Este bolso de mano refleja elegancia urbana y funcionalidad en cada detalle. Con acabados de calidad y un diseño que se adapta a cualquier ocasión, es el complemento ideal para quienes aman destacar con sutileza.',
         price: 135000,
         image: '/images/bolsos/bolso-rojo-pitalito.avif',
         category: 'bolso',
