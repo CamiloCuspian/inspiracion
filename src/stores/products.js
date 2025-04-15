@@ -108,6 +108,261 @@ export const useProductsStore = defineStore('products', {
         middleNotes: 'Floral Blanco, Cuero',
         baseNotes: 'Animálico, pachulí'
       },
+      {
+        id: 7,
+        name: '212 Carolina Herrera',
+        description: 'Un aroma fresco, moderno y urbano, ideal para el día a día.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/212-carolina-herrera.avif',
+        category: 'mujer',
+        topNotes: 'Floral Blanco, Florares',
+        middleNotes: 'Citrico, Atalcado',
+        baseNotes: 'Animálico, Verde'
+      },
+      {
+        id: 8,
+        name: '212 Sexy de Carolina Herrera',
+        description: 'Una fragancia seductora y envolvente con un toque de misterio.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/212-sexy-carolina-herrera.avif',
+        category: 'mujer',
+        topNotes: 'Dulce, Atalcado, Almizclado',
+        middleNotes: 'Avanillado, Caramelo, Florales',
+        baseNotes: 'Citrico, Amaderado'
+      },
+      {
+        id: 9,
+        name: '212 VIP Carolina Herrera',
+        description: 'Un aroma exclusivo y festivo, perfecto para destacar en la noche.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/212-vip-carolina-herrera.avif',
+        category: 'mujer',
+        topNotes: 'Avanillado, Ron, Dulce',
+        middleNotes: 'Tropical, Afrutados, Floral Blanco',
+        baseNotes: 'Atalcado, Amaderado, Fresco'
+      },
+      {
+        id: 10,
+        name: ' 273 Rodeo Drive Fred Hayman',
+        description: 'Clásico y glamuroso, con un aire vintage y elegante.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/273-rodeo-drive-fred-hayman.avif',
+        category: 'mujer',
+        topNotes: 'Floral Blanco, Florares',
+        middleNotes: 'Citrico, Atalcado',
+        baseNotes: 'Animálico, Verde'
+      },
+      {
+        id: 11,
+        name: '360 Perry Ellis',
+        description: 'Fresco, limpio y enérgico, ideal para el día a día.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/360-perry-ellis.avif',
+        category: 'mujer',
+        topNotes: 'Floral Blanco, Florares, Fresco',
+        middleNotes: 'Acuatico, Aromático, Afrutados',
+        baseNotes: 'Especiado Suave, Amaderado, Almizcldo'
+      },
+      {
+        id: 12,
+        name: 'Olympea Paco Rabanne',
+        description: 'Femenina y poderosa, con un toque salado y oriental.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/olympea-paco-rabanne.avif',
+        category: 'mujer',
+        topNotes: 'Floral Blanco, Avanillado',
+        middleNotes: 'Citrico, Atalcado, Ambar',
+        baseNotes: 'Cálido Especiado, Baisámico'
+      },
+      {
+        id: 13,
+        name: 'Omnia Coral Bvlgari',
+        description: 'Vibrante y tropical, con notas frutales y florales.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/omnia-coral-bvlgari.avif',
+        category: 'mujer',
+        topNotes: 'Florares, Amaderado, Fresco Especiado',
+        middleNotes: 'Afrutados, Almizclado',
+        baseNotes: 'Citrico, Acuatico, Amargo'
+      },
+      {
+        id: 14,
+        name: 'Omnia Crystalline Bvlgari',
+        description: 'Delicada y pura, inspirada en la transparencia del cristal.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/omnia-crystalline-bvlgari.avif',
+        category: 'mujer',
+        topNotes: 'Amaderado, Florales, Almizclado',
+        middleNotes: 'Acuatico, Verde, Ozónico',
+        baseNotes: 'Afrutados, Fresco, Atalcado '
+      },
+      {
+        id: 15,
+        name: 'Pure XS For Her Paco Rabanne',
+        description: 'Atrevida y adictiva, con una mezcla dulce y sensual.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/pure-xs-for-her-paco-rabanne.avif',
+        category: 'mujer',
+        topNotes: 'Avanillado, Amaderado, Atalcado',
+        middleNotes: 'Coco, Floral Amarillo, Lactonico',
+        baseNotes: 'Almizclado, Floral Blanco, Afrutados'
+      },
+      {
+        id: 16,
+        name: ' Ralph Ralph Lauren',
+        description: 'Juvenil y fresco, con un espíritu libre y veraniego.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/ralph-lauren.avif',
+        category: 'mujer',
+        topNotes: 'Floral, Frutado',
+        middleNotes: 'Citrinos, Fresco',
+        baseNotes: 'Verde'
+      },
+      {
+        id: 17,
+        name: 'Rose CH Carolina Herrera',
+        description: 'Romántico y suave, con el encanto de una rosa moderna.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/rose-ch-carolina-herrera.avif',
+        category: 'mujer',
+        topNotes: 'Afrutados, Champan, Florares',
+        middleNotes: 'Aldehídico, Dulce, Almizclado',
+        baseNotes: 'Amaderado, Citrico, Atalcado'
+      },
+      {
+        id: 18,
+        name: 'Selena Gomez Eau de Parfum',
+        description: 'Dulce, coqueta y divertida, con un toque de fruta jugosa.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/selena-gomez-eau-de-parfum.avif',
+        category: 'mujer',
+        topNotes: 'Dulce, Afrutados',
+        middleNotes: 'Vainilla',
+        baseNotes: 'Chocolate'
+      },
+      {
+        id: 19,
+        name: 'Sofia Sofia Vergara',
+        description: 'Elegante y femenina, con una mezcla floral y oriental.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/sofia-sofia-vergara.avif',
+        category: 'mujer',
+        topNotes: 'Afrutados, Amaderados, Dulce',
+        middleNotes: 'Atalcado, Avanillado, Aromatico',
+        baseNotes: 'Florales, Rosas'
+      },
+      {
+        id: 20,
+        name: 'Thank U, Next Ariana Grande',
+        description: 'Dulce, atrevido y moderno, con personalidad pop.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/thank-u-nex-ariana-grande.avif',
+        category: 'mujer',
+        topNotes: 'Dulce, Coco, Afrutados',
+        middleNotes: 'Afrutados, Avanillado',
+        baseNotes: 'Almendrado'
+      },
+      {
+        id: 21,
+        name: 'Tommy Girl – Tommy Hilfiger',
+        description: 'Refrescante y juvenil, con esencia libre y aventurera.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/tommy-girl-tommy-hilfiger.avif',
+        category: 'mujer',
+        topNotes: 'Citrico, Floral Blanco, Florales',
+        middleNotes: 'Afrutados, Aromático, Rosas',
+        baseNotes: 'Verde Atalcado, Amaderado'
+      },
+      {
+        id: 22,
+        name: 'Touch of Pink – Lacoste Fragrances',
+        description: 'Femenina y alegre, con notas cítricas y florales.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/touch-of-pink-lacoste-fragrances.avif',
+        category: 'mujer',
+        topNotes: 'Citrico, Atalcado, Dulce',
+        middleNotes: 'Afrutados, Avanillado, Aromatico',
+        baseNotes: 'Calido Especiado, Floral Blanco, Amaderado'
+      },
+      {
+        id: 23,
+        name: 'Viva La Juicy – Juicy Couture',
+        description: 'Dulce y glam, ideal para chicas atrevidas y divertidas.',
+        price: {
+          baja: 10000,
+          normal: 15000,
+          alta: 20000
+        },
+        image: '/images/perfumes-mujer/viva-la-juicy-couture.avif',
+        category: 'mujer',
+        topNotes: 'Dulce, Floral Blanco, Caramelo',
+        middleNotes: 'Afrutados, Avanillado, Citrico',
+        baseNotes: 'Amaderado, laxtónico, Atalcado'
+      },
 
       // Perfumes de hombre
       {
